@@ -8,7 +8,7 @@
 '''
 
 # here put the import lib
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def parse_requirements(filename):
@@ -24,7 +24,7 @@ setup(
     author="xzy",
     author_email="1580987871@qq.com",
     description="Django ORM独立库, 可以不同进程使用",
-    packages=['djdb'],
+    packages=find_packages(),
     install_requires=parse_requirements("requirements.txt"),
     entry_points={
         'console_scripts': [

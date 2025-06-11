@@ -43,7 +43,6 @@ def main():
     ]
     sys.stdout.write("Django version is %s\n" % str(VERSION))
     subcommand = sys.argv[1] if len(sys.argv) > 1 else None
-    print(111111, subcommand)
     if subcommand in ("help", None):
         sys.stdout.write("djdb allow commands is %s" %
                          ("\n".join(allow_commands)))
