@@ -79,6 +79,19 @@ DATABASES = {
 }
 
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://172.28.89.32:6379/1",  # Redis服务器地址和数据库
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            # 连接池相关配置，可以根据需要进行调整
+            "CONNECTION_POOL_KWARGS": {"max_connections": 800},
+            "DECODE_RESPONSES": True,			# 自动将byte转成字符串
+        }
+    }
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
